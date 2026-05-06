@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>精彩内容，点击阅读原文查看</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #f3f3f3;
+            color: #333;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        .article {
+            max-width: 680px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+            padding: 20px 16px 40px;
+        }
+        .title {
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            color: #000;
+        }
+        .meta {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .meta img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .content {
+            font-size: 16px;
+            color: #333;
+        }
+        .content p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+        .content img {
+            width: 100%;
+            border-radius: 4px;
+            margin: 12px 0;
+        }
+        
+        /* 底部阅读原文区域 */
+        .read-more {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        .finger {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            animation: bounce 1.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .read-btn {
+            display: inline-block;
+            padding: 12px 40px;
+            background: #07c160;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .read-btn:active {
+            opacity: 0.8;
+            transform: scale(0.98);
+        }
+        .read-tip {
+            font-size: 13px;
+            color: #999;
+            margin-top: 12px;
+        }
+        
+        /* 底部引导 */
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+        }
+        .footer img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="article">
+        <!-- 文章头部 -->
+        <h1 class="title">🔥 精彩内容，点击下方阅读原文查看完整版</h1>
+        <div class="meta">
+            <img src="https://picsum.photos/100/100?random=1" alt="头像">
+            <span>精选推荐</span>
+            <span>·</span>
+            <span>刚刚</span>
+        </div>
+        
+        <!-- 文章内容（可替换） -->
+        <div class="content">
+            <p>这里是一段引导文案，吸引用户点击下方的"阅读原文"继续查看完整内容。</p>
+            <p>你可以把这段文字换成你的项目介绍、活动说明、或者任何你想展示的内容...</p>
+            <img src="https://picsum.photos/680/400?random=2" alt="封面图">
+            <p>更多精彩内容，请点击下方 👇 <strong>阅读原文</strong> 按钮跳转查看。</p>
+        </div>
+        
+        <!-- 阅读原文区域 -->
+        <div class="read-more">
+            <!-- 手指图标 SVG -->
+            <svg class="finger" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 20 C50 15 55 10 60 10 C65 10 70 15 70 20 L70 50" stroke="#ff6b35" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M30 50 C30 45 35 40 40 40 L70 40 C75 40 80 45 80 50 L80 75 C80 85 75 90 65 90 L45 90 C35 90 30 85 30 75 L30 50Z" stroke="#ff6b35" stroke-width="4" fill="none"/>
+                <path d="M50 55 L50 75" stroke="#ff6b35" stroke-width="3" stroke-linecap="round"/>
+                <path d="M40 55 L40 70" stroke="#ff6b35" stroke-width="3" stroke-linecap="round"/>
+                <path d="M60 55 L60 70" stroke="#ff6b35" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            
+            <a href="https://baidu.com" class="read-btn">阅读原文</a>
+            <p class="read-tip">点击上方按钮，跳转到完整内容页面</p>
+        </div>
+        
+        <!-- 底部 -->
+        <div class="footer">
+            <img src="https://picsum.photos/100/100?random=3" alt="公众号">
+            <p>欢迎关注 · 持续更新精彩内容</p>
+        </div>
+    </div>
+</body>
+</html>
