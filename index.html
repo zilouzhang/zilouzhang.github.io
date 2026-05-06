@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 5秒后自动跳转（如需立即跳转，把 content="5" 改成 "0"） -->
+    <meta http-equiv="refresh" content="5;url=https://你要跳转的目标网址.com">
+    <title>页面跳转中...</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 30px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        h1 { font-size: 28px; margin-bottom: 15px; font-weight: 500; }
+        p { font-size: 16px; opacity: 0.9; margin-bottom: 30px; }
+        .countdown { font-size: 48px; font-weight: bold; margin: 20px 0; }
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: #fff;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .target-url {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.7;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="loader"></div>
+        <h1>即将跳转到目标页面</h1>
+        <p>正在为您准备，请稍候...</p>
+        <div class="countdown" id="countdown">5</div>
+        <a href="https://你要跳转的目标网址.com" class="btn">立即跳转</a>
+        <div class="target-url">目标：https://baidu.com</div>
+    </div>
+
+    <script>
+        // 倒计时逻辑
+        let seconds = 5;
+        const countdownEl = document.getElementById('countdown');
+        const timer = setInterval(() => {
+            seconds--;
+            countdownEl.textContent = seconds;
+            if (seconds <= 0) clearInterval(timer);
+        }, 1000);
+
+        // JS 备用跳转（如果 meta refresh 被浏览器拦截）
+        setTimeout(() => {
+            window.location.href = 'https://你要跳转的目标网址.com';
+        }, 5000);
+    </script>
+</body>
+</html>
